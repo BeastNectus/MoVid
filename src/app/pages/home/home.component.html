@@ -1,13 +1,18 @@
 <div class="flex justify-center p-2 sm:flex-col md:flex-col lg:flex-row h-[100vh]">
-    <div class="items-center justify-center hidden lg:flex mb-4">
+    <!-- <div class="items-center justify-center hidden lg:flex mb-4">
         <button (click)="prevPage()" class="border p-2 text-white hover:text-black hover:bg-white font-semibold">PREV</button>
-    </div>
+    </div> -->
     <div class="flex flex-col items-center justify-center w-full lg:w-9/12 gap-5">
         <h1 class="text-white text-[1.3rem] font-semibold">MoVid - ©Axios</h1>
-        <div *ngIf="!movies || movies.length === 0">
+        <div class="flex items-center justify-center mb-4">
+            <input type="text" [(ngModel)]="searchQuery" (input)="searchMovies()" class="p-2 border rounded-md mb-4" placeholder="Search movies...">
+        </div>
+        
+        <div *ngIf="!isLoading && filteredMovies.length === 0 && searchQuery.trim() !== ''">
             <p style="color: white; text-align: center">No movies found.</p>
         </div>
-        <div class="lg:overflow-x-hidden flex justify-center md:w-10/12 lg:w-full overflow-y-auto">
+        <div *ngIf="isLoading" class="text-white">Fetching movies...</div>
+        <div *ngIf="!isLoading && (filteredMovies.length > 0 || searchQuery.trim() === '')" class="lg:overflow-x-hidden flex justify-center md:w-10/12 lg:w-full overflow-y-auto">
             <table class="movie-table m-0">
                 <thead>
                     <tr>
@@ -17,7 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let movie of movies">
+                    <tr *ngFor="let movie of filteredMovies">
                         <td class="text-center">{{ movie.title }}</td>
                         <td class="text-center">{{ movie.imdb_id }}</td>
                         <td class="text-center">
@@ -27,17 +32,18 @@
                 </tbody>
             </table>
         </div>
+        
         <div class="flex items-center justify-center gap-5">
-            <div class="items-center justify-center flex lg:hidden">
+            <!-- <div class="items-center justify-center flex lg:hidden">
                 <button (click)="prevPage()" class="border p-2 text-white hover:text-black hover:bg-white font-semibold">PREV</button>
-            </div>
-            <span class="text-white font-semibold mt-1">Page - {{ currentPage }}</span>
-            <div class="items-center justify-center flex lg:hidden">
+            </div> -->
+            <!-- <span class="text-white font-semibold mt-1">Page - {{ currentPage }}</span> -->
+            <!-- <div class="items-center justify-center flex lg:hidden">
                 <button (click)="nextPage()" class="border p-2 text-white hover:text-black hover:bg-white font-semibold">NEXT</button>
-            </div>
+            </div> -->
         </div>
     </div>
-    <div class="items-center justify-center hidden lg:flex mt-4">
+    <!-- <div class="items-center justify-center hidden lg:flex mt-4">
         <button (click)="nextPage()" class="border p-2 text-white hover:text-black hover:bg-white font-semibold">NEXT</button>
-    </div>
+    </div> -->
 </div>

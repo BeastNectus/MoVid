@@ -9,7 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { VideoPlayerComponent } from './pages/video-player/video-player.component';
 import { FormsModule } from '@angular/forms';
 import { FullscreenMessageComponent } from './pages/fullscreen-message/fullscreen-message.component';
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,9 +24,12 @@ import { FullscreenMessageComponent } from './pages/fullscreen-message/fullscree
     AppRoutingModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
