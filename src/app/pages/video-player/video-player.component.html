@@ -1,8 +1,8 @@
-<div class="text-center flex items-center flex-col gap-5 mt-8 relative">
+<div class="text-center flex items-center flex-col gap-5 pt-8 relative h-[100vh]">
     <a [routerLink]="['/home']" class="absolute left-5 text-[blanchedalmond] border p-3 hover:text-black hover:bg-white">Back</a>
-    <h2 class="text-white text-lg font-semibold">Axios Video Player</h2>
+    <h2 class="text-white text-lg font-semibold mt-20 lg:mt-0">Axios Video Player</h2>
     <h3 class="text-white text-lg font-normal">
         Now playing: <span class="italic">{{ movieTitle }}</span>
     </h3>
-    <iframe [src]="videoUrl" width="60%" height="500" frameborder="0" allowfullscreen class="border-4 rounded-[2rem]"></iframe>
+    <iframe [src]="videoUrl" frameborder="0" allowfullscreen class="border-4 rounded-[2rem] h-[200px] w-[80%] lg:w-[60%] lg:h-[500px]"></iframe>
 </div>

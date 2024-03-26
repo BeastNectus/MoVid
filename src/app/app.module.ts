@@ -8,13 +8,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VideoPlayerComponent } from './pages/video-player/video-player.component';
 import { FormsModule } from '@angular/forms';
+import { FullscreenMessageComponent } from './pages/fullscreen-message/fullscreen-message.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    FullscreenMessageComponent,
   ],
   imports: [
     BrowserModule,
