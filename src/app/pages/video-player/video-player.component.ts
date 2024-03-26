@@ -19,8 +19,6 @@ export class VideoPlayerComponent implements OnInit {
       const srcParam = params.get('src') || '';
       const titleParam = params.get('title') || '';
 
-      console.log('Title parameter:', titleParam); 
-
       this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(srcParam);
       this.movieTitle = decodeURIComponent(titleParam);
     });
