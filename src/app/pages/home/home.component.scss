@@ -1,0 +1,20 @@
+.movie-table {
+    border-collapse: collapse;
+    width: 80%;
+  }
+  
+  .movie-table th, .movie-table td {
+    border: 1px solid white;
+    padding: 8px;
+  }
+  
+  .movie-table th {
+    background-color: #333;
+    color: white;
+  }
+  
+  .movie-table tr {
+    background-color: #5c5c5c;
+    color: white;
+  }
+  

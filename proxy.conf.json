@@ -1,0 +1,10 @@
+{
+    "/vapi": {
+      "target": "https://vidsrc.to",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/vapi": ""
+      }
+    }
+  }

@@ -1,0 +1,8 @@
+<div class="text-center flex items-center flex-col gap-5 mt-8 relative">
+    <a [routerLink]="['/home']" class="absolute left-5 text-[blanchedalmond] border p-3 hover:text-black hover:bg-white">Back</a>
+    <h2 class="text-white text-lg font-semibold">Axios Video Player</h2>
+    <h3 class="text-white text-lg font-normal">
+        Now playing: <span class="italic">{{ movieTitle }}</span>
+    </h3>
+    <iframe [src]="videoUrl" width="60%" height="500" frameborder="0" allowfullscreen class="border-4 rounded-[2rem]"></iframe>
+</div>
