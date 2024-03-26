@@ -8,11 +8,15 @@ import { Component, HostListener } from '@angular/core';
 export class AppComponent {
   title = 'movid';
 
-  @HostListener('document:keydown', ['$event'])
-  onKeyDown(event: KeyboardEvent) {
-    if ((event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) ||
-        (event.key === 'U' && event.ctrlKey)) { 
-      event.preventDefault();
+  private windowHeight: number;
+
+  constructor() {
+    this.windowHeight = window.innerHeight;
+  }
+
+  @HostListener('contextmenu', ['$event'])
+  onContextMenu(event: MouseEvent) {
+    if (window.innerHeight < this.windowHeight) {
       alert('Developer tools are disabled.');
       debugger;
     }
