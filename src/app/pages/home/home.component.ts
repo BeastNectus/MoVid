@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
             if (data && data.result.items) {                                                   
               fetchedMovies.push(...data.result.items);
               if (page === totalPages) {
-                // All movies fetched, update movies array and filteredMovies
                 this.movies = fetchedMovies;
                 this.filteredMovies = this.movies;
                 this.isLoading = false;

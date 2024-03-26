@@ -10,7 +10,6 @@ import { VideoPlayerComponent } from './pages/video-player/video-player.componen
 import { FormsModule } from '@angular/forms';
 import { FullscreenMessageComponent } from './pages/fullscreen-message/fullscreen-message.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     CommonModule,
     HttpClientModule,
-    BrowserAnimationsModule
   ],
   providers: [
     provideAnimationsAsync()
