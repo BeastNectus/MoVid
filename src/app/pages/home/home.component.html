@@ -17,16 +17,16 @@
                 <thead>
                     <tr>
                         <th>TITLE</th>
-                        <th>IMDB ID</th>
-                        <th>LINK 1</th>
+                        <!-- <th>IMDB ID</th> -->
+                        <th>LINK</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let movie of filteredMovies">
                         <td class="text-center">{{ movie.title }}</td>
-                        <td class="text-center">{{ movie.imdb_id }}</td>
+                        <!-- <td class="text-center">{{ movie.imdb_id }}</td> -->
                         <td class="text-center">
-                            <a [routerLink]="['/video-player', movie.embed_url_imdb, movie.title]" class="text-[blanchedalmond] hover:text-[red]">Play Now</a>
+                            <a [routerLink]="['/video-player', movie.embed_url_imdb, movie.title]" class="text-[blanchedalmond] hover:text-[red] text-nowrap">Play Now</a>
                         </td>
                     </tr>
                 </tbody>
