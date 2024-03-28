@@ -4,8 +4,8 @@
     </div> -->
     <div class="flex flex-col items-center justify-center w-full lg:w-9/12 gap-5">
         <h1 class="text-white text-[1.3rem] font-semibold">MoVid - ©Axios</h1>
-        <div class="flex items-center justify-center mb-4">
-            <input type="text" [(ngModel)]="searchQuery" (input)="searchMovies()" class="p-2 border rounded-md mb-4" placeholder="Search movies...">
+        <div class="flex items-center justify-center">
+            <input type="text" [(ngModel)]="searchQuery" (input)="searchMovies()" class="p-2 border rounded-md" placeholder="Search movies...">
         </div>
         
         <div *ngIf="!isLoading && filteredMovies.length === 0 && searchQuery.trim() !== ''">
@@ -16,7 +16,7 @@
             <table class="movie-table m-0">
                 <thead>
                     <tr>
-                        <th>TITLE</th>
+                        <th class="w-[75%]">TITLE</th>
                         <!-- <th>IMDB ID</th> -->
                         <th>LINK</th>
                     </tr>

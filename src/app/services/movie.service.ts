@@ -19,6 +19,10 @@ export class MovieService {
     );
   }
 
+  getEmbedUrlByTitle(title: string): Observable<string> {
+    return this.http.get<string>(`/api/movies/embedUrl?title=${encodeURIComponent(title)}`);
+  }
+
   private handleError(error: HttpErrorResponse): Observable<any> {
     console.error('An error occurred:', error);
 
