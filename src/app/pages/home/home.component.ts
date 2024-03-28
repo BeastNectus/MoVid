@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   fetchAllMovies() {
     this.isLoading = true;
-    const totalPages = 1000;
+    const totalPages = 800;
     let fetchedMovies: any[] = [];
     for (let page = 1; page <= totalPages; page++) {
       this.subscription = this.movieService.getNewMovies(page)
